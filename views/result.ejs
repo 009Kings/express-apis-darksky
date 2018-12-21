@@ -1,6 +1,7 @@
 <h2>Results Page</h2>
 
 <h5>Weather for <%= userInput %>:</h5>
+<p><%= userInput %> is at <%= lat %> latitude and <%= long %> longitude</p>
 <hr>
 <p>It is currently <%= weather.currently.summary %> with a temperature of <%= weather.currently.temperature%> (feels like <%= weather.currently.apparentTemperature %>)</p>
 <p><%= weather.hourly.summary %></p>

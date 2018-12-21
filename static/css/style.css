@@ -16,6 +16,14 @@ h2 {
   font-size: 20px;
 }
 
+.btn {
+  background-color: rgb(71, 159, 230);
+}
+
+.btn:hover {
+  background-color: rgb(133, 185, 228);
+}
+
 .card {
   background: rgb(253, 243, 186);
   color: #000;

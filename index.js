@@ -45,6 +45,7 @@ app.post('/', function(req, res){
       request(`${process.env.DARK_SKY_URL}${locations.y},${locations.x}`, (error, response, body)=>{
         if (error) {
           console.log('Bad news bears, there\'s been an error', error);
+          res.render('error', {userInput: req.body.locationInput});
         } else {
           var results = JSON.parse(body);
 
@@ -55,7 +56,7 @@ app.post('/', function(req, res){
             dailyData[index].day = moment.unix(dataPack.time).format('dddd');
             dailyData[index].wiIcon = wiIcon[dataPack.icon];
           });
-          
+
           res.render('result', {userInput: req.body.locationInput, lat: locations.x, long: locations.y, weather: results, dailyData: dailyData});
         }
       })
