@@ -1,1 +1,42 @@
 <h2>Results Page</h2>
+
+<h5>Weather for <%= userInput %>:</h5>
+<hr>
+<p>It is currently <%= weather.currently.summary %> with a temperature of <%= weather.currently.temperature%> (feels like <%= weather.currently.apparentTemperature %>)</p>
+<p><%= weather.hourly.summary %></p>
+
+<div class="row">
+<% dailyData.forEach((data, index) => { %>
+    <% if (index===0) { %>
+            <div class="col s12 m6 offset-m3 l2 offset-l1">
+              <div class="card hoverable darken-1">
+                <div class="card-content">
+                  <span class="card-title"><%= data.day %></span>
+                  <p>High of <br><strong><%= data.temperatureHigh %>&degF</strong></p>
+                  <i class="wi <%= data.wiIcon %> icon day"></i>
+                  <p>Winds at <br><strong><%= data.windSpeed %> mph</strong></p>
+                </div>
+                <div class="card-content low">
+                  <p>Low of <br><strong><%= data.temperatureLow%>&degF</strong></p>
+                </div>
+              </div>
+              <p><%= data.summary %></p>
+            </div>
+    <% } else { %>
+            <div class="col s12 m6 offset-m3 l2">
+              <div class="card hoverable darken-1">
+                <div class="card-content">
+                  <span class="card-title"><%= data.day %></span>
+                  <p>High of <br><strong><%= data.temperatureHigh %>&degF</strong></p>
+                  <i class="wi <%= data.wiIcon %> icon day"></i>
+                  <p>Winds at <br><strong><%= data.windSpeed %> mph</strong></p>
+                </div>
+                <div class="card-content low">
+                  <p>Low of <br><strong><%= data.temperatureLow%>&degF</strong></p>
+                </div>
+              </div>
+              <p><%= data.summary %></p>
+            </div>
+    <% } %>
+<% }); %>
+</div>

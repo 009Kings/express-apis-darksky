@@ -1,0 +1,45 @@
+nav {
+  background-color: rgb(173, 173, 173);
+}
+
+nav img {
+  max-width: auto;
+  max-height: 55px;
+}
+
+h1 {
+  font-size: 24px;
+  color: dodgerblue;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.card {
+  background: rgb(253, 243, 186);
+  color: #000;
+  border-radius: 20px;
+}
+
+#location {
+  text-align: center;
+}
+
+.day {
+  font-size: 2em;
+  padding: 10px 0;
+}
+
+.low {
+  background: rgb(38, 38, 71);
+  color: #fff;
+  border-bottom-left-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+}
+
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 90% !important;
+  }
+}
